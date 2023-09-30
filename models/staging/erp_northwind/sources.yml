@@ -7,3 +7,12 @@ sources:
       - name: products
       - name: categories
       - name: suppliers
+      - name: customers
+      - name: orders
+        description: Uma linha por pedido. Inclui pedidos cancelados e deletados.
+        columns:
+          - name: order_id
+            tests:
+              - unique
+              - not_null
+      - name: order_details
