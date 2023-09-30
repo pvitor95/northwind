@@ -16,3 +16,4 @@ sources:
               - unique
               - not_null
       - name: order_details
+      - name: shippers

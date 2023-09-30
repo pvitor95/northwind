@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: dim_transportadores
+    description: Essa é a dimensão com informações dos transportadores da northwind.
+    columns:
+      - name: pk_transportadores
+        description: Essa é a chave primaria da dimensão clientes.
+        tests:
+          - unique
+          - not_null

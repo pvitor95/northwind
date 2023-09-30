@@ -7,6 +7,10 @@ with
         select *
         from {{ ref('dim_clientes') }}
     )
+    , dim_transportadora as (
+        select *
+        from {{ ref('dim_transportadores')}}
+    )
     , pedido_itens as (
         select *
         from {{ ref('int_vendas_pedido_itens') }}
@@ -37,11 +41,14 @@ with
             , dim_produtos.nome_fornecedor
             , dim_produtos.is_discontinuado
             , dim_clientes.nome_cliente
+            , dim_transportadora.nome_transportador
         from pedido_itens as pedidos
         left join dim_produtos on
             pedidos.id_produto = dim_produtos.id_produto
         left join dim_clientes on
             pedidos.id_cliente = dim_clientes.id_cliente
+        left join dim_transportadora on
+            pedidos.id_transportadora = dim_transportadora.id_transportadora
     )
     , transformacoes as (
         select
