@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: dim_clientes
+    description: Essa é a dimensão com informações dos clientes da northwind.
+    columns:
+      - name: pk_cliente
+        description: Essa é a chave primaria da dimensão clientes.
+        tests:
+          - unique
+          - not_null

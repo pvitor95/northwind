@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: int_vendas_pedido_itens
+    description: Essa é a uma transformação intermediária para a fatos_vendas.
+    columns:
+      - name: sk_pedido_item
+        description: Essa é a chave unica da tabela da junção do pedido com o produto de cada ordem.
+        tests:
+          - unique
+          - not_null
